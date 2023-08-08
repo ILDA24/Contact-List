@@ -1,20 +1,17 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import ContactList from "./components/ContactList";
-import SelectedContact from "./components/SelectedContact";
+import SelectedContactId from "./components/SelectedContact";
 
 export default function App() {
   const [selectedContactId, setSelectedContactId] = useState(null);
   
-  // ContactList setSelectedContactId={setSelectedContactId}
+  //ContactList setSelectedContactId={setSelectedContactId}
   return (
     <>
       {selectedContactId ? (
-        <SelectedContact 
-          selectedContactId = {selectedContactId}
-          setSelectedContactId = {setSelectedContactId}
-        />
-        ) : (
+        <div>SelectedContact</div>
+      ) : (
           <ContactList
             setSelectedContactId = {setSelectedContactId}
           />
@@ -23,7 +20,6 @@ export default function App() {
   );
 }
 
-//("https://fsa-jsonplaceholder-69b5c48f1259.herokuapp.com/users")
-
+("https://fsa-jsonplaceholder-69b5c48f1259.herokuapp.com/users/${selectedContactId}")
 
 
